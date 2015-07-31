@@ -21,7 +21,7 @@ var RegisterView = Backbone.View.extend({
 
       // Save the user to the server via the api
       user.save();
-      Router.navigate('', {trigger: true});
+      Router.navigate('feed', {trigger: true});
 
     } else {
       alert('Your passwords do not match. Try again.');
@@ -33,7 +33,7 @@ var RegisterView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template());
     return this;
-  },
+  }
 
 
 });
