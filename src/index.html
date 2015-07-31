@@ -38,7 +38,11 @@
     <script type="text/template"id="feedView">
       <a href="#/feed/new">New Tweet</a>
       <a href="#/users/listUsers">Users</a>
-    <h1>news feed</h1>
+      <h1>news feed</h1>
+
+      <% if(email) { %>
+        Hello, <%- email %>!
+      <% } %>
     </script>
 
     <script type="text/template"id="usersView">

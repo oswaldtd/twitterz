@@ -20,7 +20,7 @@ let Router = Backbone.Router.extend({
 
   register: function() {
     var view = new RegisterView({
-      model: new User()
+      model: User
     });
 
     $('.app main').html(view.render().el);
@@ -28,7 +28,7 @@ let Router = Backbone.Router.extend({
 
   login: function() {
     var view = new LoginView({
-      model: new User()
+      model: User
     });
 
     $('.app main').html(view.render().el);
@@ -36,14 +36,14 @@ let Router = Backbone.Router.extend({
 
   listUsers: function() {
     var view = new UsersView({
-      model: new User()
+      model: User
     });
     $('.app main').html(view.render().el);
   },
 
   feed: function() {
     var view = new FeedView({
-      model: new User()
+      model: User
     });
 
     $('.app main').html(view.render().el);
@@ -51,7 +51,7 @@ let Router = Backbone.Router.extend({
 
   new: function() {
     var view = new LoginView({
-      model: new User()
+      model: User
     });
 
     $('.app main').html('new tweet');
@@ -59,22 +59,3 @@ let Router = Backbone.Router.extend({
 });
 
 export default new Router();
-
-//
-// var x = new RegisterView({
-//   model: new User({
-//     email: 'awilli1186@gmail.com'
-//   })
-// });
-//
-//
-// console.log(x);
-//
-//
-// // var userModel = model: new User({
-// //   email: 'awilli1186@gmail.com'
-// // });
-// //
-// // var x = new RegisterView({
-// //   model: userModel
-// // });
