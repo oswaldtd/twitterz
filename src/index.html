@@ -8,25 +8,31 @@
   </head>
   <body>
 
+
     <div class="app">
-      <header><h1>Join TIY-Twitter Today</h1></header>
         <nav>
-          <a href="#/">Twitterz</a>
+          <a class="twitterz" href="#/">Twitterz</a>
           <a href="#/users/register">Register</a>
           <a href="#/users/login">Login</a>
           <a href="#/feed">Feed</a>
+
+          <img src="http://theironyard.com/images/iron-yard-logo.svg" alt="Logo"/>
+
         </nav>
         <main></main>
     </div>
 
-
     <script type="text/template" id="registerView">
+      <h1>Join TIY-Twitter Today</h1>
       <h2>Please register.</h2>
+
+      <div class="register">
       <input type="email" placeholder="Enter E-mail" value="" class="emailInput">
       <input type="password" placeholder="Password" value="" class="passwordInput">
       <input type="password" placeholder="Confirm Password" value="" class="passwordConfirmInput">
       <button type="button">Sign-up</button>
     </script>
+  </div>
 
     <script type="text/template" id="loginView">
       <h2>Please login.</h2>

@@ -1,3 +1,89 @@
-body {
-  background: #fff;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  float: left;
+  border-bottom: 1px solid #4995C2;
+  width: 100%;
+  background-color: #53B3DC;
+  margin-bottom: 60px;
+    img {
+      margin-left: 475px;
+      margin-top: 12px;
+  }
+}
+
+a {
+  float: right;
+  margin-right: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  padding-top: 85px;
+  font-weight: 300;
+}
+  .twitterz {
+    float: left;
+    margin-left: 100px;
+    font-size: 20px;
+  }
+
+div {
+  h1 {
+    text-align: center;
+    margin: 0 auto;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #292F33;
+    font-size: 36px;
+    font-weight: 300;
+   }
+
+    h2 {
+      text-align: center;
+      padding-top: 35px;
+      font-family: Helvetica, Arial, sans-serif;
+      margin-top: 0px;
+      color: #292F33;
+      font-size: 30px;
+      font-weight: 300;
+      padding-bottom: 25px;
+   }
+}
+
+.register {
+  text-align: center;
+  display: block;
+  width: 360px;
+  margin-left: 530px;
+    input {
+        width: 372px;
+        padding: 10px;
+        line-height: 30px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        color: black;
+        margin-bottom: 26px;
+        outline: 0;
+        background-color: #fff;
+        border: 1px solid #e1e8ed;
+        border-radius: 3px;
+    }
+    button {
+        width: 392px;
+        padding: 12px 16px;
+        background-color: #55acee;
+        font-family: Helvetica, Arial, sans-serif;
+        color: white;
+        font-size: 18px;
+        border-radius: 5px;
+        box-shadow: none;
+        text-shadow: none;
+        outline-color: white;
+        border-color: white;
+        font-weight: normal;
+        border: 0;
+  }
 }
