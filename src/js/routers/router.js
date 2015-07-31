@@ -9,13 +9,14 @@ let Router = Backbone.Router.extend({
     'users/login': 'login'
   },
 
+
   home: function() {
     $('.app main').html('Welcome!');
   },
 
   register: function() {
     var view = new RegisterView({
-      model: new User()
+      model: User
     });
 
     $('.app main').html(view.render().el);
@@ -23,7 +24,7 @@ let Router = Backbone.Router.extend({
 
   login: function() {
     var view = new LoginView({
-      model: new User()
+      model: User
     });
 
     $('.app main').html(view.render().el);

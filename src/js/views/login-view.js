@@ -8,26 +8,34 @@ var LoginView = Backbone.View.extend({
     'click button': 'onSubmit'
   },
 
+  initialize: function() {
+    this.listenTo(this.model, 'login', this.onLogin);
+  },
+
   onSubmit: function() {
     var $loginEmail = this.$('.loginEmailInput');
     var $loginPassword = this.$('.loginPswdInput');
-    // var $email = this.$('.emailInput');
-    // var $password = this.$('.passwordInput');
 
-    if ($loginEmailInput.val() === $email.val()
-      && $loginPswdInput.val() === $passwordInput.val()) {
-      var user = User({
-        email: $email.val(),
-        password: $password.val()
+
+    if ($loginEmail.val() && $loginPassword.val()) {
+      this.model.login({
+        email: $loginEmail.val(),
+        password: $loginPassword.val()
       });
-
-      user.save();
-      Router.navigate('feed', {trigger: true});
 
     } else {
       alert('Error: Username or Password.');
     }
 
+  },
+
+  onLogin: function(data){
+    if (data.success) {
+      Router.navigate('feed', {trigger: true});
+    } else {
+      console.log(data);
+      alert('There was a problem logging you in. Please try again.\n' + data.error);
+    }
   },
 
   render: function() {
@@ -38,15 +46,3 @@ var LoginView = Backbone.View.extend({
 });
 
 export default LoginView;
-
-
-//   success: function() {
-//     if ()
-//   },
-//
-//   error: function() {
-//     if ()
-//   }
-// });
-
-// Save the user to the server via the api
