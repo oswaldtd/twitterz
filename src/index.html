@@ -15,7 +15,6 @@
           <a href="#/users/register">Register</a>
           <a href="#/users/login">Login</a>
           <a href="#/feed">Feed</a>
-          <a href="#/feed/new">New Tweet</a>
         </nav>
         <main></main>
     </div>
@@ -33,7 +32,18 @@
       <h2>Please login.</h2>
       <input type="text" placeholder="Enter E-mail" value="">
       <input type="text" placeholder="Password" value="">
-      <button type="button">Sign-up</button>
+      <button type="button">Login</button>
+    </script>
+
+    <script type="text/template"id="feedView">
+      <a href="#/feed/new">New Tweet</a>
+      <a href="#/users/listUsers">Users</a>
+    <h1>news feed</h1>
+    </script>
+
+    <script type="text/template"id="usersView">
+      <a href="#/feed/new">New Tweet</a>
+      <a href="#/feed">Feed</a>
     </script>
 
     <!-- Third Party Libraries -->
