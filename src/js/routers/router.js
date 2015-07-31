@@ -14,6 +14,7 @@ let Router = Backbone.Router.extend({
     'feed/new': 'new',
   },
 
+
   home: function() {
     $('.app main').html('Welcome!');
   },
