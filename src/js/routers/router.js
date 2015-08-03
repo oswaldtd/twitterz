@@ -16,7 +16,7 @@ let Router = Backbone.Router.extend({
 
 
   home: function() {
-    $('.app main').html('Welcome!');
+    $('.app main').html('<p id="home">Welcome! Please click register or login to get started!</p>');
   },
 
   register: function() {
