@@ -3,7 +3,10 @@ import LoginView from '../views/login-view';
 import FeedView from '../views/feed-view';
 import UsersView from '../views/users-view';
 import User from '../models/user';
+import Friend from '../models/friend';
 import Feed from '../collections/feed';
+import Users from '../collections/users';
+
 
 let Router = Backbone.Router.extend({
   routes: {
@@ -37,11 +40,21 @@ let Router = Backbone.Router.extend({
   },
 
   listUsers: function() {
+    var collection = new Users();
     var view = new UsersView({
-      model: User
+      collection: collection,
+      model: Friend
     });
-    $('.app main').html(view.render().el);
-  },
+
+    collection.fetch({
+      success: function() {
+        $('.app main').html(view.render().el);
+      },
+      error: function() {
+        alert('Error getting users.');
+      }
+  });
+},
 
   feed: function() {
     var collection = new Feed();

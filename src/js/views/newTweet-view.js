@@ -1,3 +1,5 @@
+import Router from '../routers/router';
+
 var NewTweet = Backbone.View.extend({
   template: _.template($('#newTweet').html()),
 

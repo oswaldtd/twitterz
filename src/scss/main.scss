@@ -181,10 +181,19 @@ a {
       color: white;
       position: relative;
       bottom: 2em;
-      }
+    }
       a:last-child {
         float: right;
         margin-right: 1em;
       }
     }
+    .users-list {
+      text-align: center;
+      float: left;
+      position: relative;
+      left: 28em;
+      div {
+      margin-bottom: 1em;
+    }
+  }
   }
