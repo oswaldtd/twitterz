@@ -27,23 +27,25 @@
       <h2>Please register.</h2>
 
       <div class="register">
-      <input type="email" placeholder="Enter E-mail" value="" class="emailInput">
-      <input type="password" placeholder="Password" value="" class="passwordInput">
-      <input type="password" placeholder="Confirm Password" value="" class="passwordConfirmInput">
-      <button type="button">Sign-up</button>
+        <input type="email" placeholder="Enter E-mail" value="" class="emailInput">
+        <input type="password" placeholder="Password" value="" class="passwordInput">
+        <input type="password" placeholder="Confirm Password" value="" class="passwordConfirmInput">
+        <button type="button">Sign-up</button>
+      </div>
     </script>
-  </div>
 
     <script type="text/template" id="loginView">
       <h2>Please login.</h2>
-      <input type="text" placeholder="Enter E-mail" value="">
-      <input type="text" placeholder="Password" value="">
+      <input type="email" placeholder="Enter E-mail" value="">
+      <input type="password" placeholder="Password" value="">
       <button type="button">Login</button>
     </script>
 
     <script type="text/template"id="feedView">
-      <a href="#/feed/new">New Tweet</a>
-      <a href="#/users/listUsers">Users</a>
+      <div class="feed">
+        <a href="#/feed/new">New Tweet</a>
+        <a href="#/users/listUsers">Users</a>
+      </div>
       <h1>news feed</h1>
 
       <% if(email) { %>
@@ -57,8 +59,8 @@
     </script>
 
     <script type="text/template" id="newTweet">
-      <a href="#/feed">Feed</a>
-      <button type="button">New Tweet</button>
+        <a href="#/feed">Feed</a>
+        <button type="button">New Tweet</button>
     </script>
 
     <!-- Third Party Libraries -->

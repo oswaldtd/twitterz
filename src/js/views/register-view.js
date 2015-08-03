@@ -1,4 +1,3 @@
-import User from '../models/user';
 import Router from '../routers/router';
 
 var RegisterView = Backbone.View.extend({
@@ -14,13 +13,14 @@ var RegisterView = Backbone.View.extend({
     var $passwordConfirm = this.$('.passwordConfirmInput');
 
     if ($password.val() === $passwordConfirm.val()) {
-      var user = new User({
+
+
+      // Save the user to the server via the api
+      this.model.set({
         email: $email.val(),
         password: $password.val()
       });
-
-      // Save the user to the server via the api
-      user.save();
+      this.model.save();
       Router.navigate('feed', {trigger: true});
 
     } else {
