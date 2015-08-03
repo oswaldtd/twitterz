@@ -1,21 +1,20 @@
 let User = Backbone.Model.extend({
-
-  url: 'http://localhost/users/new',
+  url: 'http://tiy-twitter.herokuapp.com/user/sign_in',
 
   defaults: {
     email: ''
   },
   login: function(credentials) {
-    $.ajax('http://localhost/login')
+    $.ajax('http://tiy-twitter.herokuapp.com/user/sign_in')
       .done(this.loginSuccess.bind(this))
       .fail(this.loginSuccess.bind(this));
   },
 
   loginSuccess: function(data) {
     var data = {
-      email: 'will@theironyard.com'
+      email: ''
     };
-    
+
     this.set({
       email: data.email
     });
