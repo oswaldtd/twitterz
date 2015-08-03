@@ -23,10 +23,23 @@
     </div>
 
     <script type="text/template" id="registerView">
+      <section class =signUp>
       <h1>Join TIY-Twitter Today</h1>
-      <h2>Please register.</h2>
+      <h2>Please Register</h2>
+      </section>
 
       <div class="register">
+      <input type="email" placeholder="Enter E-mail" value="" class="emailInput">
+      <input type="password" placeholder="Password" value="" class="passwordInput">
+      <input type="password" placeholder="Confirm Password" value="" class="passwordConfirmInput">
+      <button type="button">Sign-up</button>
+      </div>
+    </script>
+
+
+    <script type="text/template" id="loginView">
+      <section class="login">
+      <h2>Please Login</h2>
         <input type="email" placeholder="Enter E-mail" value="" class="emailInput">
         <input type="password" placeholder="Password" value="" class="passwordInput">
         <input type="password" placeholder="Confirm Password" value="" class="passwordConfirmInput">
@@ -34,15 +47,11 @@
       </div>
     </script>
 
-    <script type="text/template" id="loginView">
-      <h2>Please login.</h2>
-      <input type="email" placeholder="Enter E-mail" value="">
-      <input type="password" placeholder="Password" value="">
-      <button type="button">Login</button>
-    </script>
-
     <script type="text/template"id="feedView">
       <div class="feed">
+      <a href="#/feed/new">New Tweet</a>
+      <a href="#/users/listUsers">Users</a>
+      </div>
         <a href="#/feed/new">New Tweet</a>
         <a href="#/users/listUsers">Users</a>
       </div>
@@ -54,8 +63,10 @@
     </script>
 
     <script type="text/template"id="usersView">
-      <a href="#/feed/new">New Tweet</a>
-      <a href="#/feed">Feed</a>
+      <div class="users">
+        <a href="#/feed/new">New Tweet</a>
+        <a href="#/feed">Feed</a>
+      </div>
     </script>
 
     <script type="text/template" id="newTweet">

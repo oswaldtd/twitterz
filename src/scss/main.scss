@@ -1,16 +1,23 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-nav {
-  float: left;
-  border-bottom: 1px solid #4995C2;
-  width: 100%;
-  background-color: #53B3DC;
-  margin-bottom: 60px;
+.app {
+
+  #home {
+    text-align: center;
+    font-size: 35px;
+  }
+  nav {
+    float: left;
+    border-bottom: 1px solid #4995C2;
+    width: 100%;
+    background-color: #53B3DC;
+    margin-bottom: 60px;
     img {
-      margin-left: 475px;
+      margin-left: 36em;
       margin-top: 12px;
   }
 
@@ -18,7 +25,6 @@ nav {
 a {
   float: right;
   margin-right: 15px;
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 18px;
   color: white;
   text-decoration: none;
@@ -27,16 +33,17 @@ a {
 }
   .twitterz {
     float: left;
-    margin-left: 100px;
+    margin-left: .5em;
     font-size: 20px;
   }
 }
 
+.signUp {
+
 div {
+
   h1 {
     text-align: center;
-    margin: 0 auto;
-    font-family: Helvetica, Arial, sans-serif;
     color: #292F33;
     font-size: 36px;
     font-weight: 300;
@@ -45,7 +52,6 @@ div {
     h2 {
       text-align: center;
       padding-top: 35px;
-      font-family: Helvetica, Arial, sans-serif;
       margin-top: 0px;
       color: #292F33;
       font-size: 30px;
@@ -55,15 +61,12 @@ div {
 }
 
 .register {
-  text-align: center;
-  display: block;
-  width: 360px;
-  margin-left: 530px;
+  width: 10em;
+  margin-left: 33em;
     input {
-        width: 372px;
+        width: 20em;
         padding: 10px;
         line-height: 30px;
-        font-family: Helvetica, Arial, sans-serif;
         font-size: 18px;
         color: black;
         margin-bottom: 26px;
@@ -73,18 +76,91 @@ div {
         border-radius: 3px;
     }
     button {
-        width: 392px;
-        padding: 12px 16px;
+        width: 21.2em;
+        padding: .5em;
         background-color: #55acee;
-        font-family: Helvetica, Arial, sans-serif;
         color: white;
         font-size: 18px;
         border-radius: 5px;
-        box-shadow: none;
-        text-shadow: none;
         outline-color: white;
         border-color: white;
         font-weight: normal;
-        border: 0;
+        cursor: pointer;
   }
 }
+
+.login {
+  display: block;
+  width: 10em;
+  margin-left: 33em;
+  h2 {
+    text-align: center;
+    width:10em;
+    color: #292F33;
+    font-size: 36px;
+    font-weight: 300;
+    padding-bottom: 1em;
+  }
+  input {
+    width: 20em;
+    padding: 10px;
+    line-height: 30px;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 26px;
+    border: 1px solid #e1e8ed;
+    border-radius: 3px;
+  }
+  button{
+    width: 21.2em;
+    padding: .5em;
+    background-color: #55acee;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    outline-color: white;
+    border-color: white;
+    font-weight: normal;
+    cursor: pointer;
+  }
+}
+
+  .feed {
+    a {
+      float:left;
+      font-size: 25px;
+      text-decoration: none;
+      margin-left: 1em;
+      padding:5px;
+      background-color: #FF6666;
+      border-radius: 5px;
+      color: white;
+      position: relative;
+      bottom: 2em;
+
+  }
+   a:last-child {
+     float: right;
+     margin-right: 1em;
+   }
+}
+
+  .users {
+    a {
+      float:left;
+      font-size: 25px;
+      text-decoration: none;
+      margin-left: 1em;
+      padding:5px;
+      background-color: #FF6666;
+      border-radius: 5px;
+      color: white;
+      position: relative;
+      bottom: 2em;
+      }
+      a:last-child {
+        float: right;
+        margin-right: 1em;
+      }
+    }
+  }
