@@ -10,11 +10,11 @@ var html = `
 <% if(user.email) { %>
   Hello, <%- email %>!
 <% } %>
-
+<p id="tweet"> 
 <% _.each(tweets, function(tweet) { %>
   <%- tweet.body %>
 <% }) %>
-
+</p>
 `;
 var FeedView = Backbone.View.extend({
   template: _.template(html),

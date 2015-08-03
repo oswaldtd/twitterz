@@ -10,15 +10,31 @@
     text-align: center;
     font-size: 35px;
   }
+  #tweet {
+    position: absolute;
+    left: 15em;
+    top: 6em;
+    font-size: 24px;
+    border: 1px solid #E1E1F7;
+    border-radius: 5px;
+    width: 29em;
+    padding: .5em 0;
+    text-align: center;
+    background: #E1E1F7;
+
+  }
   nav {
     float: left;
-    border-bottom: 1px solid #4995C2;
+    border-bottom: 1px solid #53B3DC;
     width: 100%;
-    background-color: #53B3DC;
+    height:4.5em;
+    background: #53B3DC;
     margin-bottom: 60px;
     img {
-      margin-left: 36em;
-      margin-top: 12px;
+      width: 4em;
+      position: relative;
+      left: 37em;
+      top: 0.5em;
   }
 
 
@@ -28,13 +44,20 @@ a {
   font-size: 18px;
   color: white;
   text-decoration: none;
-  padding-top: 85px;
+  position: relative;
+  top:1.5em;
   font-weight: 300;
+  &:hover {
+    text-decoration: underline;
+  }
 }
   .twitterz {
     float: left;
     margin-left: .5em;
     font-size: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -134,7 +157,10 @@ a {
       border-radius: 5px;
       color: white;
       position: relative;
-      bottom: 2em;
+      bottom:2em;
+      &:hover {
+        text-decoration: underline;
+      }
 
   }
    a:last-child {

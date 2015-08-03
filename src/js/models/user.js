@@ -1,5 +1,5 @@
 let User = Backbone.Model.extend({
-  url: 'http://tiy-twitter.herokuapp.com/users',
+  url: 'http://tiy-twitter.herokuapp.com',
 
   defaults: {
     email: ''
@@ -18,8 +18,12 @@ let User = Backbone.Model.extend({
   },
 
   login: function(credentials) {
-    $.ajax('http://tiy-twitter.herokuapp.com/users/sign_in', {
-      data: credentials
+    $.ajax('http://tiy-twitter.herokuapp.com/oauth/token', {
+      method: 'POST',
+      data: {
+       user: credentials,
+       grant_type: 'password'
+   },
     })
       .done(this.loginSuccess.bind(this))
       .fail(this.loginFail.bind(this));
