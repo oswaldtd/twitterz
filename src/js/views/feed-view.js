@@ -1,4 +1,7 @@
-let FeedView = Backbone.View.extend({
+
+import Router from '../routers/router';
+
+var FeedView = Backbone.View.extend({
   template: _.template($('#feedView').html()),
 
 

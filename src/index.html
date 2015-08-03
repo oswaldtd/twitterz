@@ -40,10 +40,11 @@
     <script type="text/template" id="loginView">
       <section class="login">
       <h2>Please Login</h2>
-      <input type="email" placeholder="Enter E-mail" value="">
-      <input type="password" placeholder="Password" value="">
-      <button type="button">Login</button>
-      </section>
+        <input type="email" placeholder="Enter E-mail" value="" class="emailInput">
+        <input type="password" placeholder="Password" value="" class="passwordInput">
+        <input type="password" placeholder="Confirm Password" value="" class="passwordConfirmInput">
+        <button type="button">Sign-up</button>
+      </div>
     </script>
 
     <script type="text/template"id="feedView">
@@ -51,6 +52,11 @@
       <a href="#/feed/new">New Tweet</a>
       <a href="#/users/listUsers">Users</a>
       </div>
+        <a href="#/feed/new">New Tweet</a>
+        <a href="#/users/listUsers">Users</a>
+      </div>
+      <h1>news feed</h1>
+
       <% if(email) { %>
         Hello, <%- email %>!
       <% } %>
@@ -64,8 +70,8 @@
     </script>
 
     <script type="text/template" id="newTweet">
-      <a href="#/feed">Feed</a>
-      <button type="button">New Tweet</button>
+        <a href="#/feed">Feed</a>
+        <button type="button">New Tweet</button>
     </script>
 
     <!-- Third Party Libraries -->
