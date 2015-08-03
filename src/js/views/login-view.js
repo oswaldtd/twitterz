@@ -1,8 +1,16 @@
 import User from '../models/user';
 import Router from '../routers/router';
 
+let html = `
+<section class="login">
+  <h2>Please Login</h2>
+  <input type="email" placeholder="Enter E-mail" value="" class="emailInput">
+  <input type="password" placeholder="Password" value="" class="passwordInput">
+  <button type="button">Sign-up</button>
+</section>
+`;
 var LoginView = Backbone.View.extend({
-  template: _.template($('#loginView').html()),
+  template: _.template(html),
 
   events: {
     'click button': 'onSubmit'
@@ -13,8 +21,8 @@ var LoginView = Backbone.View.extend({
   },
 
   onSubmit: function() {
-    var $loginEmail = this.$('.loginEmailInput');
-    var $loginPassword = this.$('.loginPswdInput');
+    var $loginEmail = this.$('.emailInput');
+    var $loginPassword = this.$('.passwordInput');
 
 
     if ($loginEmail.val() && $loginPassword.val()) {

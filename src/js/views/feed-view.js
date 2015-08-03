@@ -1,12 +1,30 @@
 
 import Router from '../routers/router';
 
+var html = `
+<div class="feed">
+  <a href="#/feed/new">New Tweet</a>
+  <a href="#/users/listUsers">Users</a>
+</div>
+
+<% if(user.email) { %>
+  Hello, <%- email %>!
+<% } %>
+
+<% _.each(tweets, function(tweet) { %>
+  <%- tweet.body %>
+<% }) %>
+
+`;
 var FeedView = Backbone.View.extend({
-  template: _.template($('#feedView').html()),
+  template: _.template(html),
 
 
   render: function() {
-    this.$el.html(this.template(this.model.toJSON()));
+    this.$el.html(this.template({
+      user: this.model.toJSON(),
+      tweets: this.collection.toJSON()
+    }));
     return this;
   }
 

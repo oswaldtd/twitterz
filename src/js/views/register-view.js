@@ -16,12 +16,11 @@ var RegisterView = Backbone.View.extend({
 
 
       // Save the user to the server via the api
-      this.model.set({
+      this.model.register({
         email: $email.val(),
-        password: $password.val()
+        password: $password.val(),
+        password_confirmation: $passwordConfirm.val()
       });
-      this.model.save();
-      Router.navigate('feed', {trigger: true});
 
     } else {
       alert('Your passwords do not match. Try again.');

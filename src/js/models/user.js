@@ -1,13 +1,28 @@
 let User = Backbone.Model.extend({
-  url: 'http://tiy-twitter.herokuapp.com/user/sign_in',
+  url: 'http://tiy-twitter.herokuapp.com/users',
 
   defaults: {
     email: ''
   },
+
+  register: function(credentials) {
+    $.ajax('http://tiy-twitter.herokuapp.com/users', {
+      method: 'POST',
+      dataType: 'json',
+      data: JSON.stringify({
+        user: credentials
+      })
+    })
+      .done(this.registerSuccess.bind(this))
+      .fail(this.registerFail.bind(this));
+  },
+
   login: function(credentials) {
-    $.ajax('http://tiy-twitter.herokuapp.com/user/sign_in')
+    $.ajax('http://tiy-twitter.herokuapp.com/users/sign_in', {
+      data: credentials
+    })
       .done(this.loginSuccess.bind(this))
-      .fail(this.loginSuccess.bind(this));
+      .fail(this.loginFail.bind(this));
   },
 
   loginSuccess: function(data) {
@@ -24,6 +39,14 @@ let User = Backbone.Model.extend({
 
   loginFail: function(jqXHR, textStatus, errorThrown) {
     this.trigger('login', {success: false, error: errorThrown});
+  },
+
+  registerSuccess: function(data) {
+    console.log('success!', data);
+  },
+
+  registerFail: function(jqXHR, textStatus, errorThrown) {
+    console.log('error!', errorThrown);
   }
 });
 
