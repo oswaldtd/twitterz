@@ -7,6 +7,10 @@ var RegisterView = Backbone.View.extend({
     'click button': 'onSubmit'
   },
 
+  // initialize: function() {
+  //   this.listenTo(this.model, 'register', this.onRegister);
+  // },
+
   onSubmit: function() {
     var $email = this.$('.emailInput');
     var $password = this.$('.passwordInput');
@@ -14,20 +18,26 @@ var RegisterView = Backbone.View.extend({
 
     if ($password.val() === $passwordConfirm.val()) {
 
-
       // Save the user to the server via the api
       this.model.register({
         email: $email.val(),
-        password: $password.val(),
-        password_confirmation: $passwordConfirm.val()
+        password: $password.val()
       });
 
     } else {
       alert('Your passwords do not match. Try again.');
     }
 
-
   },
+
+  // onRegister: function(data){
+  //   if (data.success) {
+  //     Router.navigate('feed', {trigger: true});
+  //   } else {
+  //     console.log(data);
+  //     alert('There was a problem registering. Please try again.\n' + data.error);
+  //   }
+  // },
 
   render: function() {
     this.$el.html(this.template());
