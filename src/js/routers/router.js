@@ -3,6 +3,7 @@ import LoginView from '../views/login-view';
 import FeedView from '../views/feed-view';
 import UsersView from '../views/users-view';
 import User from '../models/user';
+import Feed from '../collections/feed';
 
 let Router = Backbone.Router.extend({
   routes: {
@@ -43,11 +44,20 @@ let Router = Backbone.Router.extend({
   },
 
   feed: function() {
+    var collection = new Feed();
     var view = new FeedView({
+      collection: collection,
       model: User
     });
 
-    $('.app main').html(view.render().el);
+    collection.fetch({
+      success: function(){
+        $('.app main').html(view.render().el);
+      },
+      error: function(){
+        alert('Error getting tweets.');
+      }
+  });
   },
 
   new: function() {

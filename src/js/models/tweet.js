@@ -1,14 +1,16 @@
 let Tweet = Backbone.Model.extend({
-  url: 'http://localhost/tweet/new',
-
+  url: 'http://tiy-twitter.herokuapp.com/tweets/',
   defaults: {
-    content: '',
-    user: {}
+    body: '',
+    user_id: {}
   },
-  loadTweet: function() {
-    $ajax('http://localhost/feed')
-    
+  parse: function(response) {
+    var data = response.attributes;
+    data.id = response.id;
+
+    // behind the scenes, calls model.set(data) using the object that was returned here.
+    return data;
   }
 });
 
-export default new Tweet();
+export default Tweet;

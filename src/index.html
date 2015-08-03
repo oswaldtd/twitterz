@@ -37,31 +37,6 @@
     </script>
 
 
-    <script type="text/template" id="loginView">
-      <section class="login">
-      <h2>Please Login</h2>
-        <input type="email" placeholder="Enter E-mail" value="" class="emailInput">
-        <input type="password" placeholder="Password" value="" class="passwordInput">
-        <input type="password" placeholder="Confirm Password" value="" class="passwordConfirmInput">
-        <button type="button">Sign-up</button>
-      </div>
-    </script>
-
-    <script type="text/template"id="feedView">
-      <div class="feed">
-      <a href="#/feed/new">New Tweet</a>
-      <a href="#/users/listUsers">Users</a>
-      </div>
-        <a href="#/feed/new">New Tweet</a>
-        <a href="#/users/listUsers">Users</a>
-      </div>
-      <h1>news feed</h1>
-
-      <% if(email) { %>
-        Hello, <%- email %>!
-      <% } %>
-    </script>
-
     <script type="text/template"id="usersView">
       <div class="users">
         <a href="#/feed/new">New Tweet</a>
