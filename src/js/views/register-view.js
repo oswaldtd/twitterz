@@ -1,3 +1,4 @@
+import User from '../models/user';
 import Router from '../routers/router';
 
 var RegisterView = Backbone.View.extend({
@@ -7,9 +8,9 @@ var RegisterView = Backbone.View.extend({
     'click button': 'onSubmit'
   },
 
-  // initialize: function() {
-  //   this.listenTo(this.model, 'register', this.onRegister);
-  // },
+  initialize: function() {
+    this.listenTo(this.model, 'register', this.onRegister);
+  },
 
   onSubmit: function() {
     var $email = this.$('.emailInput');
@@ -30,14 +31,14 @@ var RegisterView = Backbone.View.extend({
 
   },
 
-  // onRegister: function(data){
-  //   if (data.success) {
-  //     Router.navigate('feed', {trigger: true});
-  //   } else {
-  //     console.log(data);
-  //     alert('There was a problem registering. Please try again.\n' + data.error);
-  //   }
-  // },
+  onRegister: function(data){
+    if (data.success) {
+      Router.navigate('users/listUsers', {trigger: true});
+    } else {
+      console.log(data);
+      alert('There was a problem registering. Please try again.\n' + data.error);
+    }
+  },
 
   render: function() {
     this.$el.html(this.template());

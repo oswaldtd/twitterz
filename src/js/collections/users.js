@@ -5,7 +5,6 @@ var Users = Backbone.Collection.extend({
   url: 'http://tiy-twitter.herokuapp.com/users',
 
   parse: function(response) {
-    console.log(response);
     return response.data;
   }
 });
