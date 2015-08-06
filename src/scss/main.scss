@@ -4,6 +4,10 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+body {
+  background: #d9d9d9 ;
+}
+
 .app {
 
   #home {
@@ -11,16 +15,12 @@
     font-size: 35px;
   }
   #tweet {
-    position: absolute;
+    position: relative;
     left: 15em;
-    top: 6em;
     font-size: 24px;
-    border: 1px solid #E1E1F7;
-    border-radius: 5px;
     width: 29em;
     padding: .5em 0;
     text-align: center;
-    background: #E1E1F7;
 
   }
   nav {

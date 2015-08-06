@@ -1,4 +1,3 @@
-import User from '../models/user';
 import Router from '../routers/router';
 
 let html = `
