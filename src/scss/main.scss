@@ -299,7 +299,10 @@ a {
         font-weight: normal;
         cursor: pointer;
         &:hover {
-          text-decoration: underline;
+          background-color: white;
+          opacity: 0.5;
+          color: #CA171B;
+          border: 1.5px solid #CA171B;
         }
       }
     }
