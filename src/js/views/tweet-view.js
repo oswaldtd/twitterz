@@ -9,6 +9,7 @@ var html =
 
 let TweetView = Backbone.View.extend ({
 
+  className: 'tweet_box',
   template: _.template(html),
   render() {
     this.$el.html(this.template(this.model.toJSON()));
