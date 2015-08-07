@@ -1,5 +1,6 @@
-import User from '../models/user';
-import Tweet from '../models/tweet';
+// import Tweet from '../models/tweet';
+import Router from '../routers/router';
+import Feed from '../collections/feed';
 
 let html =
 `
@@ -14,27 +15,26 @@ let NewTweet = Backbone.View.extend({
   className: 'tweet',
 
   events: {
-    'focus textarea': 'toggleInput',
     'click button': 'onSubmit'
   },
 
-  toggleInput() {
-   this.$('button').fadeIn();
- },
- 
   onSubmit() {
   var $input = this.$('textarea');
   var body = $input.val();
+  console.log(body);
 
-  if (User.isLoggedIn() && body) {
-    this.collection.add({
-      user: User.get('id'),
+  if (body) {
+
+     this.collection.add({
       body: body
     });
 
-    $input.val('');
+    this.model.save();
+
+    Router.navigate('feed', {trigger: true});
   }
 },
+
 
   render: function() {
     this.$el.html(this.template());

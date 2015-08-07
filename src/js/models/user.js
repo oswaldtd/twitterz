@@ -1,7 +1,8 @@
 import BaseModel from './base';
 
 let User = Backbone.Model.extend({
-  url: 'http://tiy-twitter.herokuapp.com',
+  url: 'http://tiy-twitter.herokuapp.com  ',
+  method: "POST",
 
   defaults: {
     user: 0,
@@ -78,6 +79,7 @@ let User = Backbone.Model.extend({
       tokenType: response.token_type,
       expiresIn: response.expires_in
     });
+
 
     this.save();
     }

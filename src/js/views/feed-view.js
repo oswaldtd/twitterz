@@ -19,7 +19,7 @@ let FeedView = Backbone.View.extend({
 
 
   render: function() {
-        this.$el.html(this.template());
+    this.$el.html(this.template());
 
     this.collection.each((tweet) => {
       var view = new TweetView({

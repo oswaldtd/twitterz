@@ -1,7 +1,7 @@
 import BaseModel from './base';
 
-let Tweet = Backbone.Model.extend({
-  url: 'http://tiy-twitter.herokuapp.com',
+let Tweet = BaseModel.extend({
+  url: 'http://tiy-twitter.herokuapp.com/tweets',
   defaults: {
     body: '',
   },
@@ -12,13 +12,14 @@ let Tweet = Backbone.Model.extend({
     user: response.attributes.user_id,
     }
   },
-  
-  newTweet: function() {
-    $.ajax(url, {
+
+  newTweet: function(tweet) {
+    $.ajax('http://tiy-twitter.herokuapp.com/tweets', {
       method: 'POST',
+      dataType: 'toJSON',
       data: {
-        body: attributes.body,
-        user: attributes.user_id,
+        body: tweet.attributes.body,
+        user: tweet.attributes.user_id,
       }
     })
   }
