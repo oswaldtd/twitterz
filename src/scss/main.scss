@@ -166,13 +166,13 @@ a {
 }
 
   .feed {
+    display: inline-block;
     h2 {
-      position: relative;
       left: 28em;
       top: 1em;
     }
     a {
-      float:left;
+      float: left;
       font-size: 20px;
       text-decoration: none;
       margin-left: 1em;
@@ -190,18 +190,20 @@ a {
         color: #53B3DC;
       }
     }
-      a:nth-child(2) {
+      a:last-child {
         float: right;
         margin-right: 1em;
       }
+        .tweet_box {
+          position: relative;
+          top: 5em;
+          left: 35em;
+  }
 
    #tweet{
-     margin-bottom: 5px;
      border-radius: 3px;
-     width: 35%;
      font-size: 25px;
      color: #202F37;
-     position: relative;
      left:17em;
      top:2em;
       i {
@@ -210,11 +212,9 @@ a {
         font-size: 30px;
         position: relative;
         top: 0.1em;
-        }
-      }
-   }
+    }
+  }
 }
-
   .users {
     a {
       float:left;
@@ -304,3 +304,4 @@ a {
         }
       }
     }
+}
