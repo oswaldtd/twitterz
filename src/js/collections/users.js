@@ -1,6 +1,8 @@
-import Friend from '../models/friend'
+import Friend from '../models/friend';
+import BaseCollection from './base';
 
-var Users = Backbone.Collection.extend({
+
+let Users = BaseCollection.extend({
   model: Friend,
   url: 'http://tiy-twitter.herokuapp.com/users',
 

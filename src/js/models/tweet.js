@@ -1,15 +1,27 @@
-let Tweet = Backbone.Model.extend({
-  url: 'http://tiy-twitter.herokuapp.com/tweets/',
+import BaseModel from './base';
+
+let Tweet = BaseModel.extend({
+  url: 'http://tiy-twitter.herokuapp.com/tweets',
   defaults: {
     body: '',
-    user_id: {}
   },
-  parse: function(response) {
-    var data = response.attributes;
-    data.id = response.id;
 
-    // behind the scenes, calls model.set(data) using the object that was returned here.
-    return data;
+  parse: function(response) {
+    return {
+    body: response.attributes.body,
+    user: response.attributes.user_id,
+    }
+  },
+
+  newTweet: function(tweet) {
+    $.ajax('http://tiy-twitter.herokuapp.com/tweets', {
+      method: 'POST',
+      dataType: 'toJSON',
+      data: {
+        body: tweet.attributes.body,
+        user: tweet.attributes.user_id,
+      }
+    })
   }
 });
 

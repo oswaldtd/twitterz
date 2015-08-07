@@ -1,8 +1,37 @@
+import BaseModel from './base';
+
 let User = Backbone.Model.extend({
-  url: 'http://tiy-twitter.herokuapp.com',
+  url: 'http://tiy-twitter.herokuapp.com  ',
+  method: "POST",
 
   defaults: {
-    email: '',
+    user: 0,
+   accessToken: null,
+   tokenType: null,
+   expiresIn: 0,
+   refreshtoken: null,
+   email: ''
+  },
+
+  initialize() {
+    this.fetch({
+      success(model) {
+        if(model.isLoggedIn()){
+          model._loginSuccess();
+        }
+      }
+    })
+  },
+
+
+  refreshAuth() {
+    _.delay(() => {
+      alert('token expired...time to fetch a new one');
+    }, this.get('expiresIn') * 1000);
+  },
+
+  isLoggedIn() {
+    return !!this.get('accessToken');
   },
 
   register: function(credentials) {
@@ -38,20 +67,26 @@ let User = Backbone.Model.extend({
         followers: attributes.followers
       },
     })
-    .done(this.usersSuccess.bind(this))
-    .fail(this.usersFail.bind(this));
   },
 
-  loginSuccess: function(data) {
-    var data = {
-      email: ''
-    };
+  loginSuccess: function(response) {
 
+    if (response) {
     this.set({
-      email: data.email
+      email: response.email,
+      accessToken: response.access_token,
+      refreshToken: response.refresh_token,
+      tokenType: response.token_type,
+      expiresIn: response.expires_in
     });
 
-    this.trigger('login', {success: true, user: data});
+
+    this.save();
+    }
+
+    this.refreshAuth();
+
+    this.trigger('login', {success: true, user: this});
   },
 
   loginFail: function(jqXHR, textStatus, errorThrown) {

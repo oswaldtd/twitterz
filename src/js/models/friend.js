@@ -1,12 +1,14 @@
-let Friend = Backbone.Model.extend({
+import BaseModel from './base';
+
+let Friend = BaseModel.extend({
 
   defaults: {
     email: '',
+    following: false
   },
   parse: function(response) {
     var data = response.attributes;
 
-    // behind the scenes, calls model.set(data) using the object that was returned here.
     return data;
   }
 

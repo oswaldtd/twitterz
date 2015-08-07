@@ -1,4 +1,3 @@
-import User from '../models/user';
 import Router from '../routers/router';
 
 let html = `
@@ -23,7 +22,6 @@ var LoginView = Backbone.View.extend({
   onSubmit: function() {
     var $loginEmail = this.$('.emailInput');
     var $loginPassword = this.$('.passwordInput');
-
 
     if ($loginEmail.val() && $loginPassword.val()) {
       this.model.login({

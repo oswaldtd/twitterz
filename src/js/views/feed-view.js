@@ -1,18 +1,15 @@
-import Tweet from '../views/tweet-view'
+import TweetView from './tweet-view';
 
-
-var html = `
-<div class="feed">
+var html =`
+  <h2>Tweets</h2>
   <a href="#/feed/new">New Tweet</a>
   <a href="#/users/listUsers">Users</a>
-</div>
-  <h2>Tweets</h2>
-`;
+  `;
 
-var FeedView = Backbone.View.extend({
+let FeedView = Backbone.View.extend({
   template: _.template(html),
 
-  className: 'tweets',
+  className: 'feed',
 
   initialize: function() {
     this.listenTo(this.collection, 'add', this.render);
@@ -20,15 +17,15 @@ var FeedView = Backbone.View.extend({
 
 
   render: function() {
-    this.$el.empty();
 
-    this.collection.each(function(tweet){
-      var view = new Tweet({
+    this.$el.html(this.template());
+
+    this.collection.each((tweet) => {
+      var view = new TweetView({
         model: tweet
-      });
-
+      })
       this.$el.append(view.render().el);
-    }, this);
+    });
 
     return this;
   }

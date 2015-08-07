@@ -1,6 +1,8 @@
 import RegisterView from '../views/register-view';
+import  NewTweet from '../views/newTweet-view';
 import LoginView from '../views/login-view';
 import FeedView from '../views/feed-view';
+import TweetView from '../views/tweet-view';
 import UsersView from '../views/users-view';
 import User from '../models/user';
 import Friend from '../models/friend';
@@ -57,13 +59,13 @@ let Router = Backbone.Router.extend({
 },
 
   feed: function() {
-    var collection = new Feed();
+
     var view = new FeedView({
-      collection: collection,
+      collection: Feed,
       model: User
     });
 
-    collection.fetch({
+    Feed.fetch({
       success: function(){
         $('.app main').html(view.render().el);
       },
@@ -74,11 +76,12 @@ let Router = Backbone.Router.extend({
   },
 
   new: function() {
-    var view = new LoginView({
+    var view = new NewTweet({
+      collection: Feed,
       model: User
     });
 
-    $('.app main').html('new tweet');
+    $('.app main').html(view.render().el);
   }
 });
 

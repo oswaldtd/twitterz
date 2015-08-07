@@ -1,12 +1,16 @@
-import Tweet from '../models/tweet'
+import Tweet from '../models/tweet';
+import NewTweet from '../views/NewTweet-view';
+import BaseCollection from './base';
 
-var Feed = Backbone.Collection.extend({
+
+let Feed = BaseCollection.extend({
+  url: 'http://tiy-twitter.herokuapp.com/tweets',
   model: Tweet,
-  url: 'http://tiy-twitter.herokuapp.com',
 
   parse: function(response) {
     return response.data;
+    console.log(response);
   }
 });
 
-export default Feed;
+export default new Feed();

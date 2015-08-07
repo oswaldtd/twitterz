@@ -1,11 +1,12 @@
-var html = `
-
+var html =
+`
 <div id="tweet">
   <p><%- body %></p>
 </div>
 `;
 
-let Tweet = Backbone.View.extend ({
+let TweetView = Backbone.View.extend ({
+
   template: _.template(html),
   render() {
     this.$el.html(this.template(this.model.toJSON()));
@@ -13,4 +14,4 @@ let Tweet = Backbone.View.extend ({
   }
 });
 
-export default Tweet;
+export default TweetView;
