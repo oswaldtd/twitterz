@@ -5,7 +5,7 @@ let html = `
   <h2>Please Login</h2>
   <input type="email" placeholder="Enter E-mail" value="" class="emailInput">
   <input type="password" placeholder="Password" value="" class="passwordInput">
-  <button type="button">Sign In</button>
+  <button type="button"><i class="fa fa-sign-in"></i> Sign In</button>
 </section>
 `;
 var LoginView = Backbone.View.extend({

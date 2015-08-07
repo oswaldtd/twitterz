@@ -1,8 +1,6 @@
 var html =
 `
-<div id="tweet">
-  <p><%- body %></p>
-</div>
+  <p id='tweet'><i class="fa fa-twitter-square"></i> <%- body %></p>
 `;
 
 let TweetView = Backbone.View.extend ({

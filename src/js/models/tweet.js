@@ -16,7 +16,7 @@ let Tweet = BaseModel.extend({
   newTweet: function(tweet) {
     $.ajax('http://tiy-twitter.herokuapp.com/tweets', {
       method: 'POST',
-      dataType: 'toJSON',
+      dataType: 'json',
       data: {
         body: tweet.attributes.body,
         user: tweet.attributes.user_id,

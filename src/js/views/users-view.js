@@ -4,11 +4,11 @@ import FriendView from './friend-view';
 
 var html =
 `<div class="users">
-  <a href="#/feed/new">New Tweet</a>
-  <a href="#/feed">Feed</a>
+  <a href="#/feed/new"><i class="fa fa-plus"></i> New Tweet</a>
+  <a href="#/feed"><i class="fa fa-rss"></i> Feed</a>
   </div>
   <div class="users-list"></div>
-`
+`;
 
 var UsersView = Backbone.View.extend({
   template: _.template(html),
