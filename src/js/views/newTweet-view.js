@@ -1,10 +1,10 @@
-// import Tweet from '../models/tweet';
+import Tweet from '../models/tweet';
 import Router from '../routers/router';
 import Feed from '../collections/feed';
 
 let html =
 `
-<a href="#/feed">Feed</a>
+<a href="#/feed"><i class="fa fa-rss"></i> Feed</a>
 <textarea placeholder ="What's on your mind?"></textarea>
 <button type="button">Tweet</button>
 `;
@@ -25,11 +25,11 @@ let NewTweet = Backbone.View.extend({
 
   if (body) {
 
-     this.collection.add({
-      body: body
-    });
-
-    this.model.save();
+     this.model.newTweet({
+       data: {
+         body: body,
+       }
+    }, this);
 
     Router.navigate('feed', {trigger: true});
   }
