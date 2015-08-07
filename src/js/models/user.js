@@ -59,10 +59,20 @@ let User = Backbone.Model.extend({
   },
 
   registerSuccess: function(data) {
+    var data = {
+      email: ''
+    };
+
+    this.set({
+      email: data.email
+    });
+
+    this.trigger('register', {success: true, user: data});
     console.log('success!', data);
   },
 
   registerFail: function(jqXHR, textStatus, errorThrown) {
+    this.trigger('login', {success: false, error: errorThrown})
     console.log('error!', errorThrown);
   }
 });
