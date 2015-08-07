@@ -1,7 +1,9 @@
-import BaseModel from './base';
+import Backbone from 'backbone';
+import {_} from 'underscore';
+import $ from 'jquery';
 
 let User = Backbone.Model.extend({
-  url: 'http://tiy-twitter.herokuapp.com  ',
+  url: 'http://tiy-twitter.herokuapp.com/users',
   method: "POST",
 
   defaults: {
@@ -72,17 +74,14 @@ let User = Backbone.Model.extend({
   loginSuccess: function(response) {
 
     if (response) {
-    this.set({
-      email: response.email,
-      accessToken: response.access_token,
-      refreshToken: response.refresh_token,
-      tokenType: response.token_type,
-      expiresIn: response.expires_in
+      this.set({
+        email: response.email,
+        accessToken: response.access_token,
+        refreshToken: response.refresh_token,
+        tokenType: response.token_type,
+        expiresIn: response.expires_in
     });
-
-
-    this.save();
-    }
+  }
 
     this.refreshAuth();
 

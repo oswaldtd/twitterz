@@ -1,3 +1,7 @@
+import Backbone from 'backbone';
+import {_} from 'underscore';
+import $ from 'jquery';
+
 let html = `
   <h4><%- email %></h4>
 `;

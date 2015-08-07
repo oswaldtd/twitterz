@@ -1,3 +1,7 @@
+import Backbone from 'backbone';
+import {_} from 'underscore';
+import $ from 'jquery';
+
 import Router from '../routers/router';
 import Friend from '../models/friend';
 import FriendView from './friend-view';

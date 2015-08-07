@@ -1,9 +1,11 @@
+import Backbone from 'backbone';
+import {_} from 'underscore';
+
 import Tweet from '../models/tweet';
 import NewTweet from '../views/NewTweet-view';
-import BaseCollection from './base';
 
 
-let Feed = BaseCollection.extend({
+let Feed = Backbone.Collection.extend({
   url: 'http://tiy-twitter.herokuapp.com/tweets',
   model: Tweet,
 

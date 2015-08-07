@@ -1,3 +1,7 @@
+import Backbone from 'backbone';
+import {_} from 'underscore';
+import $ from 'jquery';
+
 import Tweet from '../models/tweet';
 import Router from '../routers/router';
 import Feed from '../collections/feed';
@@ -21,17 +25,19 @@ let NewTweet = Backbone.View.extend({
   onSubmit() {
   var $input = this.$('textarea');
   var body = $input.val();
-  console.log(body);
 
   if (body) {
 
-     this.model.newTweet({
-       data: {
-         body: body,
-       }
-    }, this);
+     var tweet = new Tweet({
+       body: body
+    });
 
-    Router.navigate('feed', {trigger: true});
+    tweet.save(null, {
+      success(){
+        console.log('CALLED SUCCESS');
+        Router.navigate('feed', {trigger: true});
+      }
+    });
   }
 },
 

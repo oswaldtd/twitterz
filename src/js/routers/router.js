@@ -1,3 +1,7 @@
+import Backbone from 'backbone';
+import {_} from 'underscore';
+import $ from 'jquery';
+
 import RegisterView from '../views/register-view';
 import  NewTweet from '../views/newTweet-view';
 import LoginView from '../views/login-view';
@@ -59,7 +63,7 @@ let Router = Backbone.Router.extend({
 },
 
   feed: function() {
-
+    console.log('called feed');
     var view = new FeedView({
       collection: Feed,
       model: User
@@ -67,6 +71,7 @@ let Router = Backbone.Router.extend({
 
     Feed.fetch({
       success: function(){
+        console.log('called success');
         $('.app main').html(view.render().el);
       },
       error: function(){

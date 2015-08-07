@@ -1,3 +1,7 @@
+import Backbone from 'backbone';
+import {_} from 'underscore';
+import $ from 'jquery';
+
 import Router from '../routers/router';
 
 let html = `

@@ -1,8 +1,10 @@
+import Backbone from 'backbone';
+import {_} from 'underscore';
+
 import Friend from '../models/friend';
-import BaseCollection from './base';
 
 
-let Users = BaseCollection.extend({
+let Users = Backbone.Collection.extend({
   model: Friend,
   url: 'http://tiy-twitter.herokuapp.com/users',
 

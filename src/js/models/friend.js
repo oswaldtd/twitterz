@@ -1,11 +1,13 @@
-import BaseModel from './base';
+import Backbone from 'backbone';
+import {_} from 'underscore';
 
-let Friend = BaseModel.extend({
+let Friend = Backbone.Model.extend({
 
   defaults: {
     email: '',
     following: false
   },
+
   parse: function(response) {
     var data = response.attributes;
 

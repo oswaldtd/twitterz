@@ -1,3 +1,7 @@
+import Backbone from 'backbone';
+import {_} from 'underscore';
+import $ from 'jquery';
+
 var html =
 `
   <p id='tweet'><i class="fa fa-twitter-square"></i> <%- body %></p>
