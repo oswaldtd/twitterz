@@ -6,8 +6,8 @@ import TweetView from './tweet-view';
 
 var html = `
   <h2>Tweets</h2>
-  <a href="#/feed/new"> <i class="fa fa-plus"></i> New Tweet</a>
-  <a href="#/users/listUsers"> <i class="fa fa-users"></i> Users</a>
+  <a class="new_tweet" href="#/feed/new"> <i class="fa fa-plus"></i> New Tweet</a>
+  <a class="users" href="#/users/listUsers"> <i class="fa fa-users"></i> Users</a>
   `;
 
 let FeedView = Backbone.View.extend({
