@@ -169,7 +169,8 @@ a {
     display: inline-block;
     h2 {
       left: 28em;
-      top: 1em;
+      top: 2em;
+      position: relative;
     }
     a {
       float: left;
@@ -194,18 +195,36 @@ a {
         float: right;
         margin-right: 1em;
       }
-        .tweet_box {
+        .users {
+          float: right;
           position: relative;
-          top: 5em;
-          left: 35em;
-  }
+          float: right;
+          position: relative;
+          left: 40em;
+      }
+          .tweet_box {
+            position: relative;
+            top: 5em;
+            left: 25em;
+            border: 1px solid #D0D0D0;
+            border-radius: .5em;
+            padding-left: 7.8em;
+            padding-right: 7.8em;
+            margin-top: 0.5em;
+            padding-bottom: 3em;
+            padding-top: 3em;
+            &:hover {
+              background-color: #f5f8fa;
+        }
+      }
 
    #tweet{
      border-radius: 3px;
-     font-size: 25px;
+     font-size: 28px;
      color: #202F37;
      left:17em;
      top:2em;
+     font-family: sans-serif;
       i {
         padding-right: .5em;
         color: #53B3DC;
