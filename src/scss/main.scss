@@ -166,13 +166,14 @@ a {
 }
 
   .feed {
+    display: inline-block;
     h2 {
-      position: relative;
       left: 28em;
-      top: 1em;
+      top: 2em;
+      position: relative;
     }
     a {
-      float:left;
+      float: left;
       font-size: 20px;
       text-decoration: none;
       margin-left: 1em;
@@ -190,31 +191,49 @@ a {
         color: #53B3DC;
       }
     }
-      a:nth-child(2) {
+      a:last-child {
         float: right;
         margin-right: 1em;
       }
+        .users {
+          float: right;
+          position: relative;
+          float: right;
+          position: relative;
+          left: 40em;
+      }
+          .tweet_box {
+            position: relative;
+            top: 5em;
+            left: 25em;
+            border: 1px solid #D0D0D0;
+            border-radius: .5em;
+            padding-left: 7.8em;
+            padding-right: 7.8em;
+            margin-top: 0.5em;
+            padding-bottom: 3em;
+            padding-top: 3em;
+            &:hover {
+              background-color: #f5f8fa;
+        }
+      }
 
    #tweet{
-     margin-bottom: 5px;
      border-radius: 3px;
-    //  width: 35%;
-     font-size: 25px;
+     font-size: 28px;
      color: #202F37;
-    //  position: relative;
-    //  left:17em;
-    //  top:2em;
+     left:17em;
+     top:2em;
+     font-family: sans-serif;
       i {
         padding-right: .5em;
         color: #53B3DC;
         font-size: 30px;
         position: relative;
         top: 0.1em;
-        }
-      }
-   }
+    }
+  }
 }
-
   .users {
     a {
       float:left;
@@ -310,3 +329,4 @@ a {
         }
       }
     }
+}
