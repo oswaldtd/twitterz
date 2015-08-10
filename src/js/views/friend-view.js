@@ -3,7 +3,7 @@ import {_} from 'underscore';
 import $ from 'jquery';
 
 let html = `
-  <h4><%- email %></h4>
+  <h4><i class="fa fa-user"></i> <%- email %></h4>
 `;
 let FriendView = Backbone.View.extend({
   template: _.template(html),
